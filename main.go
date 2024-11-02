@@ -14,29 +14,6 @@ import (
 const monitoring = 3
 const delay = 5
 
-func main() {
-
-	showIntroduction()
-
-	for {
-		showMenu()
-		command := readCommand()
-
-		switch command {
-		case 1:
-			startMonitoring()
-		case 2:
-			readLog()
-		case 0:
-			fmt.Println("Saindo do programa")
-			os.Exit(0)
-		default:
-			fmt.Println("Não conheço este comando")
-			os.Exit(-1)
-		}
-	}
-}
-
 func showIntroduction() {
 	name := "Nathan"
 	version := "23.2"
@@ -142,4 +119,27 @@ func readLog() {
 	}
 
 	fmt.Println(string(archive))
+}
+
+func main() {
+
+	showIntroduction()
+
+	for {
+		showMenu()
+		command := readCommand()
+
+		switch command {
+		case 1:
+			startMonitoring()
+		case 2:
+			readLog()
+		case 0:
+			fmt.Println("Saindo do programa")
+			os.Exit(0)
+		default:
+			fmt.Println("Não conheço este comando")
+			os.Exit(-1)
+		}
+	}
 }
